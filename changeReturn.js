@@ -1,6 +1,7 @@
 ////////////// Returns Change //////////////
 const returnChange = (amountGiven) => {
     let change = {
+        tenDollarBills: 0,
         oneDollarBills: 0,
         quarters: 0,
         dimes: 0,
@@ -11,7 +12,11 @@ const returnChange = (amountGiven) => {
     let changeLeft = amountGiven
 
     const calculateChange = (changeLeft) => {
-        if (changeLeft >= 100){
+        if (changeLeft >= 1000){
+            change.tenDollarBills += Math.floor((changeLeft/1000))
+            changeLeft -= change.tenDollarBills * 1000
+            calculateChange(changeLeft)
+        } else if (changeLeft >= 100){
             change.oneDollarBills += Math.floor((changeLeft/100))
             changeLeft -= change.oneDollarBills * 100
             calculateChange(changeLeft)
