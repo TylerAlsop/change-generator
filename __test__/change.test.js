@@ -18,8 +18,9 @@ describe("Getting the correct change in return.", () => {
         })
 
     //////////// FIFTY DOLLAR BILLS & BELOW //////////////
-    it("Should return 1 fifty dollar bill, 1 twenty dollar bill, 1 ten dollar bill, 2 one dollar bill, 2 quarters, 1 dimes, 1 nickel, and 2 pennies.", () => {
+    it("Should return 0 one hundred dollar bills, 1 fifty dollar bill, 1 twenty dollar bill, 1 ten dollar bill, 2 one dollar bill, 2 quarters, 1 dimes, 1 nickel, and 2 pennies.", () => {
         const result = returnChange(8267)
+        expect(result.oneHundredDollarBills).toBe(0)
         expect(result.fiftyDollarBills).toBe(1)
         expect(result.twentyDollarBills).toBe(1)
         expect(result.tenDollarBills).toBe(1)
@@ -31,8 +32,9 @@ describe("Getting the correct change in return.", () => {
         })
 
     //////////// TWENTY DOLLAR BILLS & BELOW //////////////
-    it("Should return 0 fifty dollar bills, 1 twenty dollar bill, 1 ten dollar bill, 2 one dollar bill, 2 quarters, 1 dimes, 1 nickel, and 2 pennies.", () => {
+    it("Should return 0 one hundred dollar bills, 0 fifty dollar bills, 1 twenty dollar bill, 1 ten dollar bill, 2 one dollar bill, 2 quarters, 1 dimes, 1 nickel, and 2 pennies.", () => {
         const result = returnChange(3267)
+        expect(result.oneHundredDollarBills).toBe(0)
         expect(result.fiftyDollarBills).toBe(0)
         expect(result.twentyDollarBills).toBe(1)
         expect(result.tenDollarBills).toBe(1)
@@ -44,8 +46,9 @@ describe("Getting the correct change in return.", () => {
         })
 
     //////////// TEN DOLLAR BILLS & BELOW //////////////
-    it("Should return 0 fifty dollar bills, 0 twenty dollar bills, 1 ten dollar bill, 1 one dollar bill, 3 quarters, 1 dimes, 1 nickel, and 3 pennies.", () => {
+    it("Should return 0 one hundred dollar bills, 0 fifty dollar bills, 0 twenty dollar bills, 1 ten dollar bill, 1 one dollar bill, 3 quarters, 1 dimes, 1 nickel, and 3 pennies.", () => {
         const result = returnChange(1193)
+        expect(result.oneHundredDollarBills).toBe(0)
         expect(result.fiftyDollarBills).toBe(0)
         expect(result.twentyDollarBills).toBe(0)
         expect(result.tenDollarBills).toBe(1)
@@ -58,8 +61,9 @@ describe("Getting the correct change in return.", () => {
     
 
     //////////// ONE DOLLAR BILLS & BELOW //////////////
-    it("Should return 0 fifty dollar bills, 0 twenty dollar bills, 0 ten dollar bills, 1 one dollar bill, 3 quarters, 1 dimes, 1 nickel, and 3 pennies.", () => {
+    it("Should return 0 one hundred dollar bills, 0 fifty dollar bills, 0 twenty dollar bills, 0 ten dollar bills, 1 one dollar bill, 3 quarters, 1 dimes, 1 nickel, and 3 pennies.", () => {
         const result = returnChange(193)
+        expect(result.oneHundredDollarBills).toBe(0)
         expect(result.fiftyDollarBills).toBe(0)
         expect(result.twentyDollarBills).toBe(0)
         expect(result.tenDollarBills).toBe(0)
@@ -73,8 +77,9 @@ describe("Getting the correct change in return.", () => {
 
     //////////// QUARTERS & BELOW //////////////
 
-    it("Should return 0 fifty dollar bills, 0 twenty dollar bills, 0 ten dollar bills, 0 one dollar bills, 1 quarter, 1 dimes, 1 nickel, and 4 pennies.", () => {
+    it("Should return 0 one hundred dollar bills, 0 fifty dollar bills, 0 twenty dollar bills, 0 ten dollar bills, 0 one dollar bills, 1 quarter, 1 dimes, 1 nickel, and 4 pennies.", () => {
         const result = returnChange(44)
+        expect(result.oneHundredDollarBills).toBe(0)
         expect(result.fiftyDollarBills).toBe(0)
         expect(result.twentyDollarBills).toBe(0)
         expect(result.tenDollarBills).toBe(0)
@@ -85,8 +90,9 @@ describe("Getting the correct change in return.", () => {
         expect(result.pennies).toBe(4)
         })
 
-    it("Should return 0 fifty dollar bills, 0 twenty dollar bills, 0 ten dollar bills, 0 one dollar bills, 1 quarter, 0 dimes, 0 nickels, and 3 pennies.", () => {
+    it("Should return 0 one hundred dollar bills, 0 fifty dollar bills, 0 twenty dollar bills, 0 ten dollar bills, 0 one dollar bills, 1 quarter, 0 dimes, 0 nickels, and 3 pennies.", () => {
         const result = returnChange(28)
+        expect(result.oneHundredDollarBills).toBe(0)
         expect(result.fiftyDollarBills).toBe(0)
         expect(result.twentyDollarBills).toBe(0)
         expect(result.tenDollarBills).toBe(0)
@@ -98,8 +104,9 @@ describe("Getting the correct change in return.", () => {
     })
 
     //////////// DIMES & BELOW //////////////
-    it("Should return 0 fifty dollar bills, 0 twenty dollar bills, 0 ten dollar bills, 0 one dollar bills, 1 dime, 1 nickel, and 2 pennies.", () => {
+    it("Should return 0 one hundred dollar bills, 0 fifty dollar bills, 0 twenty dollar bills, 0 ten dollar bills, 0 one dollar bills, 1 dime, 1 nickel, and 2 pennies.", () => {
         const result = returnChange(17)
+        expect(result.oneHundredDollarBills).toBe(0)
         expect(result.fiftyDollarBills).toBe(0)
         expect(result.twentyDollarBills).toBe(0)
         expect(result.tenDollarBills).toBe(0)
@@ -112,8 +119,9 @@ describe("Getting the correct change in return.", () => {
 
 
     ////////////// NICKELS & BELOW //////////////
-    it("Should return 0 fifty dollar bills, 0 twenty dollar bills, 0 ten dollar bills, 0 one dollar bills, 1 nickel and 2 pennies", () => {
+    it("Should return 0 one hundred dollar bills, 0 fifty dollar bills, 0 twenty dollar bills, 0 ten dollar bills, 0 one dollar bills, 1 nickel and 2 pennies", () => {
         const result = returnChange(7)
+        expect(result.oneHundredDollarBills).toBe(0)
         expect(result.fiftyDollarBills).toBe(0)
         expect(result.twentyDollarBills).toBe(0)
         expect(result.tenDollarBills).toBe(0)
@@ -127,8 +135,9 @@ describe("Getting the correct change in return.", () => {
     
     //////////// PENNIES //////////////
 
-    it("Should return 0 fifty dollar bills, 0 twenty dollar bills, 0 ten dollar bills, 0 one dollar bills, 0 quarters, 0 dimes, 0 nickels, and 4 pennies.", () => {
+    it("Should return 0 one hundred dollar bills, 0 fifty dollar bills, 0 twenty dollar bills, 0 ten dollar bills, 0 one dollar bills, 0 quarters, 0 dimes, 0 nickels, and 4 pennies.", () => {
         const result = returnChange(4)
+        expect(result.oneHundredDollarBills).toBe(0)
         expect(result.fiftyDollarBills).toBe(0)
         expect(result.twentyDollarBills).toBe(0)
         expect(result.tenDollarBills).toBe(0)
