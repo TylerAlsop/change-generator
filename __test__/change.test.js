@@ -2,9 +2,20 @@ const returnChange = require("../changeReturn")
 
 
 describe("Getting the correct change in return.", () => {
+
+    //////////// TEN DOLLAR BILLS & BELOW //////////////
+    it("Should return 1 ten dollar bill, 1 one dollar bill, 3 quarters, 1 dimes, 1 nickel, and 3 pennies.", () => {
+        const result = returnChange(1193)
+        expect(result.tenDollarBills).toBe(1)
+        expect(result.oneDollarBills).toBe(1)
+        expect(result.quarters).toBe(3)
+        expect(result.dimes).toBe(1)
+        expect(result.nickels).toBe(1)
+        expect(result.pennies).toBe(3)
+        })
     
 
-    //////////// DOLLARS & BELOW //////////////
+    //////////// ONE DOLLAR BILLS & BELOW //////////////
     it("Should return 1 one dollar bill, 3 quarters, 1 dimes, 1 nickel, and 3 pennies.", () => {
         const result = returnChange(193)
         expect(result.oneDollarBills).toBe(1)
