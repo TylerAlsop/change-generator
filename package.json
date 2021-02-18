@@ -4,7 +4,7 @@
   "description": "A small app to calculate the amount of change and how many of each denomination given a specific input (USD).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
