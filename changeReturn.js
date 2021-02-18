@@ -9,7 +9,11 @@ const returnChange = (amountGiven) => {
     let changeLeft = amountGiven
 
     const calculateChange = (changeLeft) => {
-        if (changeLeft >= 5){
+        if (changeLeft >= 10){
+            change.dimes += Math.floor((changeLeft/10))
+            changeLeft -= change.dimes * 10
+            calculateChange(changeLeft)
+        } else if (changeLeft >= 5){
             change.nickels += Math.floor((changeLeft/5))
             changeLeft -= change.nickels * 5
             calculateChange(changeLeft)
