@@ -6,13 +6,25 @@ const returnChange = (amountGiven) => {
         pennies: 0
     }
     
-    if (amountGiven >= 5){
-        change.nickels += Math.floor((amountGiven/5))
-        change.pennies += amountGiven % 5
-    } else {
-        change.pennies += amountGiven
+    let changeLeft = amountGiven
+
+    const calculateChange = (changeLeft) => {
+        if (changeLeft >= 5){
+            change.nickels += Math.floor((changeLeft/5))
+            changeLeft -= change.nickels * 5
+            calculateChange(changeLeft)
+        } else {
+            change.pennies += changeLeft
+            changeLeft -= change.pennies
+        }
     }
+
+    if (changeLeft > 0) {
+        calculateChange(changeLeft)
+    }
+
     return change
+
 };
 
 module.exports = returnChange
