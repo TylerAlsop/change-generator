@@ -3,15 +3,18 @@ const returnChange = require("../changeReturn")
 
 describe("Getting the correct change in return.", () => {
 
-    //////////// QUARTERS & BELOW //////////////
+    //////////// DOLLARS & BELOW //////////////
     it("Should return 7 quarters, 1 dimes, 1 nickel, and 3 pennies.", () => {
         const result = returnChange(193)
-        expect(result.quarters).toBe(7)
+        expect(result.oneDollarBill).toBe(1)
+        expect(result.quarters).toBe(3)
         expect(result.dimes).toBe(1)
         expect(result.nickels).toBe(1)
         expect(result.pennies).toBe(3)
         })
-    
+
+
+    //////////// QUARTERS & BELOW //////////////
 
     it("Should return 1 quarter, 1 dimes, 1 nickel, and 4 pennies.", () => {
         const result = returnChange(44)
