@@ -3,6 +3,20 @@ const returnChange = require("../changeReturn")
 
 describe("Getting the correct change in return.", () => {
 
+    //////////// ONE HUNDRED DOLLAR BILLS & BELOW //////////////
+    it("Should return 1 one hundred dollar bill, 1 fifty dollar bill, 1 twenty dollar bill, 1 ten dollar bill, 2 one dollar bill, 2 quarters, 1 dimes, 1 nickel, and 2 pennies.", () => {
+        const result = returnChange(18267)
+        expect(result.oneHundredDollarBills).toBe(1)
+        expect(result.fiftyDollarBills).toBe(1)
+        expect(result.twentyDollarBills).toBe(1)
+        expect(result.tenDollarBills).toBe(1)
+        expect(result.oneDollarBills).toBe(2)
+        expect(result.quarters).toBe(2)
+        expect(result.dimes).toBe(1)
+        expect(result.nickels).toBe(1)
+        expect(result.pennies).toBe(2)
+        })
+
     //////////// FIFTY DOLLAR BILLS & BELOW //////////////
     it("Should return 1 fifty dollar bill, 1 twenty dollar bill, 1 ten dollar bill, 2 one dollar bill, 2 quarters, 1 dimes, 1 nickel, and 2 pennies.", () => {
         const result = returnChange(8267)
