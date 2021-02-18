@@ -1,6 +1,7 @@
 ////////////// Returns Change //////////////
 const returnChange = (amountGiven) => {
     let change = {
+        quarters: 0,
         dimes: 0,
         nickels: 0,
         pennies: 0
@@ -9,7 +10,11 @@ const returnChange = (amountGiven) => {
     let changeLeft = amountGiven
 
     const calculateChange = (changeLeft) => {
-        if (changeLeft >= 10){
+        if (changeLeft >= 25){
+            change.quarters += Math.floor((changeLeft/25))
+            changeLeft -= change.quarters * 25
+            calculateChange(changeLeft)
+        } else if (changeLeft >= 10){
             change.dimes += Math.floor((changeLeft/10))
             changeLeft -= change.dimes * 10
             calculateChange(changeLeft)

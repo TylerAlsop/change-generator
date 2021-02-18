@@ -15,8 +15,9 @@ describe("Getting the correct change in return.", () => {
     //////////// 28 Cents //////////////
     it("Should return 2 dimes, 1 nickel, and 3 pennies.", () => {
         const result = returnChange(28)
-        expect(result.dimes).toBe(2)
-        expect(result.nickels).toBe(1)
+        expect(result.quarters).toBe(1)
+        expect(result.dimes).toBe(0)
+        expect(result.nickels).toBe(0)
         expect(result.pennies).toBe(3)
     })
 
