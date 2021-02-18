@@ -1,0 +1,28 @@
+{
+  "name": "change-generator",
+  "version": "1.0.0",
+  "description": "A small app to calculate the amount of change and how many of each denomination given a specific input (USD).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TylerAlsop/change-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TylerAlsop/change-generator/issues"
+  },
+  "homepage": "https://github.com/TylerAlsop/change-generator#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.17",
+    "@babel/preset-env": "^7.12.17",
+    "babel-jest": "^26.6.3"
+  }
+}
